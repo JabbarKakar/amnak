@@ -7,6 +7,7 @@ import 'package:amnak/core/view/widgets/profile_img_picker.dart';
 import 'package:amnak/export.dart';
 import 'package:amnak/features/home/presentation/home_card.dart';
 import 'package:amnak/features/home/presentation/home_cubit.dart';
+import 'package:amnak/features/make_personal_request/view/make_personal_request_view.dart';
 import 'package:amnak/features/personal_request/view/personal_request_view.dart';
 import 'package:amnak/features/personal_request_types/view/personal_request_type_view.dart';
 import 'package:amnak/features/safety_checks/view/safety_check_view.dart';
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalRequestScreen(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MakePersonalRequestScreen(),));
 
                   }, child: Text("Goooo")),
                   MyListTile(
