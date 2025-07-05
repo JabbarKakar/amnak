@@ -44,7 +44,7 @@ class AppRouter {
           path: Routes.animatedSplash,
           builder: (context, state) => AnimatedSplash(
             home:
-                sl<GetStorage>().hasData(kToken) ? Routes.home : Routes.landing,
+            sl<GetStorage>().hasData(kToken) ? Routes.home : Routes.landing,
             title: '',
             duration: Duration.hoursPerDay,
             type: AnimatedSplashType.StaticDuration,
@@ -129,7 +129,7 @@ class AppRouter {
           path: Routes.chatDetails,
           builder: (context, state) => ChatDetailsPage(
             personModel:
-                (state.extra as Map<String, dynamic>)['person'] as PersonModel,
+            (state.extra as Map<String, dynamic>)['person'] as PersonModel,
           ),
         ),
         GoRoute(
@@ -205,7 +205,7 @@ class AppRouter {
                   name: Routes.profile,
                   path: Routes.profile,
                   builder: (context, state) =>
-                      const LanguageDirection(child: ProfilePage()),
+                  const LanguageDirection(child: ProfilePage()),
                 ),
               ],
             ),

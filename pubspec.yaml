@@ -18,7 +18,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.2+4
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -61,6 +61,8 @@ dependencies:
   url_launcher: ^6.3.1
   agora_rtc_engine: ^6.5.0
   permission_handler: ^11.3.1
+  provider: ^6.1.5
+  fluttertoast: ^8.2.12
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +75,11 @@ dev_dependencies:
   requests_inspector: ^4.2.0
   flutter_lints:
   mocktail: ^1.0.3
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
+  build_runner: ^2.4.5
+  freezed: ^2.3.2
+  json_serializable: ^6.7.1
 
 flutter_icons:
   android: "launcher_icon"
