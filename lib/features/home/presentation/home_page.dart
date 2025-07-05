@@ -8,6 +8,7 @@ import 'package:amnak/export.dart';
 import 'package:amnak/features/home/presentation/home_card.dart';
 import 'package:amnak/features/home/presentation/home_cubit.dart';
 import 'package:amnak/features/personal_request/view/personal_request_type_view.dart';
+import 'package:amnak/features/safety_checks/view/safety_check_view.dart';
 import 'package:provider/provider.dart';
 
 import '../../personal_request/provider/pesonal_request_provider.dart';
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalRequestTypesScreen(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SafetyCheckScreen(),));
 
                   }, child: Text("Goooo")),
                   MyListTile(
