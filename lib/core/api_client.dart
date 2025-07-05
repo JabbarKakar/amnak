@@ -37,10 +37,10 @@ class APIClient {
     };
 
     if (await box.containsKey('token')) {
-      final user = await box.read('user') as Map<String, dynamic>?;
+      // final user = await box.read('user') as Map<String, dynamic>?;
       headers.addAll({
-        'Authorization': 'Bearer ${await box.read('token')}',
-        'X-Auth-Type': '${user?['type_account'] ?? ''}',
+        'Authorization': 'Bearer ${await box.read(kToken)}',
+        'X-Auth-Type': '${(await box.read(kUser) as Map<String, dynamic>)['type_account']}',
       });
     }
     return headers;
