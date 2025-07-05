@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -37,12 +38,23 @@ class APIClient {
     };
 
     if (await box.containsKey('token')) {
-      final user = await box.read('user') as Map<String, dynamic>?;
+      final userRaw = await box.read(kUser);
+      Map<String, dynamic> user;
+      if (userRaw is String) {
+        user = jsonDecode(userRaw);
+      } else if (userRaw is Map) {
+        user = Map<String, dynamic>.from(userRaw);
+      } else {
+        user = {};
+      }
+      debugPrint('===> user: $user');
       headers.addAll({
         'Authorization': 'Bearer ${await box.read('token')}',
-        'X-Auth-Type': '${user?['type_account'] ?? ''}',
+        'X-Auth-Type': '${user['type_account'] ?? ''}',
       });
     }
+
+    debugPrint('===> headers: $headers');
     return headers;
   }
 

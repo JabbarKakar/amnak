@@ -20,6 +20,7 @@ class AuthCubit extends Cubit<BaseState> {
         return null;
       }, (r) {
         if (r.data?.token != null) {
+          debugPrint('===> login Data: ${r.data!.toJson()}');
           box.write(kToken, r.data!.token);
           box.write(kUser, r.data!.toJson());
           return r;

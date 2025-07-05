@@ -28,6 +28,7 @@ import 'package:amnak/features/terms_privacy/domain/usecases/usecases.dart';
 import 'package:amnak/features/terms_privacy/presentation/cubit.dart';
 import 'package:amnak/features/visitors/domain/usecases/usecases.dart';
 import 'package:amnak/features/visitors/presentation/visitors_cubit.dart';
+
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -75,22 +76,22 @@ Future<void> init() async {
 
   // Repository
   sl.registerLazySingleton<PostsRepository>(
-          () => PostsRepositoryImpl(remoteDataSource: sl(), localDataSource: sl()));
+      () => PostsRepositoryImpl(remoteDataSource: sl(), localDataSource: sl()));
   sl.registerLazySingleton<Repository>(
-          () => RepoImp(remoteDataSource: sl(), localDataSource: sl()));
+      () => RepoImp(remoteDataSource: sl(), localDataSource: sl()));
 
   // Datasources
   sl.registerLazySingleton<RemoteDataSource>(
-          () => RemoteDataSource(network: sl(), networkInfo: sl()));
+      () => RemoteDataSource(network: sl(), networkInfo: sl()));
   sl.registerLazySingleton<PostLocalDataSource>(
-          () => PostLocalDataSourceImpl(sharedPreferences: sl()));
+      () => PostLocalDataSourceImpl(sharedPreferences: sl()));
 
   //! Core
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
   sl.registerLazySingleton<Network>(() => Network(dio: sl(), box: sl()));
   sl.registerLazySingleton(() => SecureLocalDataSourceImpl(box: sl()));
   sl.registerLazySingleton<LocalDataSource>(
-          () => LocalDataSourceImpl(box: sl()));
+      () => LocalDataSourceImpl(box: sl()));
 
   //! External
   sl.registerLazySingleton(() => GetStorage());
@@ -99,14 +100,14 @@ Future<void> init() async {
   sl.registerLazySingleton(() => InternetConnectionChecker());
 
   sl.registerLazySingleton<Dio>(() => Dio(BaseOptions(
-    connectTimeout: const Duration(seconds: 1000),
-    receiveTimeout: const Duration(seconds: 1000),
-    // By default, Dio treats any HTTP status code from 200 to 299 as a successful response. If you need a different range or specific conditions, you can override it using validateStatus.
-    validateStatus: (status) {
-      // Treat status codes less than 399 as successful
-      return status != null;
-    },
-  )));
+        connectTimeout: const Duration(seconds: 1000),
+        receiveTimeout: const Duration(seconds: 1000),
+        // By default, Dio treats any HTTP status code from 200 to 299 as a successful response. If you need a different range or specific conditions, you can override it using validateStatus.
+        validateStatus: (status) {
+          // Treat status codes less than 399 as successful
+          return status != null;
+        },
+      )));
   sl<Dio>().interceptors.addAll(
     [
       AuthInterceptor(dio: sl(), authCubit: sl(), box: sl()),

@@ -36,7 +36,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return LanguageDirection(
       child: Scaffold(
         appBar: const CustomAppBar(),
@@ -47,10 +46,15 @@ class _HomePageState extends State<HomePage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SafetyCheckScreen(),));
-
-                  }, child: Text("Goooo")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SafetyCheckScreen(),
+                            ));
+                      },
+                      child: Text("Goooo")),
                   MyListTile(
                     leading: ProfileImgPicker(
                       radius: 50,
@@ -109,6 +113,24 @@ class _HomePageState extends State<HomePage> {
                         imagePath: Assets.imagesGuests,
                         onTap: () => context.pushNamed(Routes.courses),
                       ),
+                      HomeCard(
+                        title: context.t.employeeEvaluation,
+                        imagePath: Assets.imagesPersonal,
+                        onTap: () =>
+                            context.pushNamed(Routes.employeeEvaluation),
+                      ),
+                    ],
+                  ),
+                  10.heightBox,
+                  Row(
+                    children: [
+                      HomeCard(
+                        title: context.t.employeePermissions,
+                        imagePath: Assets.imagesPersonal,
+                        onTap: () =>
+                            context.pushNamed(Routes.employeePermissions),
+                      ),
+                      const SizedBox(width: 16),
                     ],
                   ),
                 ],
