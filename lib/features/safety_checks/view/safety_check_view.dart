@@ -1,3 +1,4 @@
+import 'package:amnak/features/safety_check_details/view/safety_check_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -75,6 +76,10 @@ class _SafetyCheckScreenState extends State<SafetyCheckScreen> {
                     margin: const EdgeInsets.symmetric(vertical: 8.0),
                     elevation: 2,
                     child: ListTile(
+                      onTap: () {
+                        // Navigate to details page if needed
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SafetyCheckDetailsScreen(safetyCheckId: datum.id.toString(),)));
+                      },
                       title: Text(
                         datum.name ?? 'Unnamed',
                         style: const TextStyle(

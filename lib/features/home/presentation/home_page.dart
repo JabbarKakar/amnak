@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => MakePersonalRequestScreen(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SafetyCheckScreen(),));
 
                   }, child: Text("Goooo")),
                   MyListTile(
