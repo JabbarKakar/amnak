@@ -266,5 +266,11 @@
     "permissionId": "رقم التصريح",
     "permissionImage": "صورة التصريح",
     "noPermissionsAvailable": "لا توجد تصاريح متاحة",
-    "imageNotAvailable": "الصورة غير متاحة"
+    "imageNotAvailable": "الصورة غير متاحة",
+    "makePersonalRequest": "تقديم طلب شخصي",
+    "myPersonalRequest": "طلباتي الشخصية",
+    "personalRequestDetails": "تفاصيل الطلب الشخصي",
+    "safetyCheckDetails": "تفاصيل التحقق من السلامة",
+    "safetyCheckStore": "متجر فحص السلامة",
+    "safetyCheckProjectDetails":"تفاصيل مشروع التحقق من السلامة"
 }

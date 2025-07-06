@@ -266,5 +266,11 @@
     "permissionId": "Permission ID",
     "permissionImage": "Permission Image",
     "noPermissionsAvailable": "No permissions available",
-    "imageNotAvailable": "Image not available"
+    "imageNotAvailable": "Image not available",
+    "makePersonalRequest": "Make a Personal Request",
+    "myPersonalRequest": "My Personal Requests",
+    "personalRequestDetails": "Personal Request Details",
+    "safetyCheckDetails": "Safety Check Details",
+    "safetyCheckStore": "Safety Check Store",
+    "safetyCheckProjectDetails": "Safety Check Project Details"
 }

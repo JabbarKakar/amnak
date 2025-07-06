@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 536 (268 per locale)
+/// Strings: 548 (274 per locale)
 ///
-/// Built on 2025-07-05 at 21:20 UTC
+/// Built on 2025-07-06 at 18:32 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -416,6 +416,12 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get permissionImage => 'Permission Image';
 	String get noPermissionsAvailable => 'No permissions available';
 	String get imageNotAvailable => 'Image not available';
+	String get makePersonalRequest => 'Make a Personal Request';
+	String get myPersonalRequest => 'My Personal Requests';
+	String get personalRequestDetails => 'Personal Request Details';
+	String get safetyCheckDetails => 'Safety Check Details';
+	String get safetyCheckStore => 'Safety Check Store';
+	String get safetyCheckProjectDetails => 'Safety Check Project Details';
 }
 
 // Path: <root>
@@ -710,6 +716,12 @@ class _StringsAr implements Translations {
 	@override String get permissionImage => 'صورة التصريح';
 	@override String get noPermissionsAvailable => 'لا توجد تصاريح متاحة';
 	@override String get imageNotAvailable => 'الصورة غير متاحة';
+	@override String get makePersonalRequest => 'تقديم طلب شخصي';
+	@override String get myPersonalRequest => 'طلباتي الشخصية';
+	@override String get personalRequestDetails => 'تفاصيل الطلب الشخصي';
+	@override String get safetyCheckDetails => 'تفاصيل التحقق من السلامة';
+	@override String get safetyCheckStore => 'متجر فحص السلامة';
+	@override String get safetyCheckProjectDetails => 'تفاصيل مشروع التحقق من السلامة';
 }
 
 /// Flat map(s) containing all translations.
@@ -986,6 +998,12 @@ extension on Translations {
 			case 'permissionImage': return 'Permission Image';
 			case 'noPermissionsAvailable': return 'No permissions available';
 			case 'imageNotAvailable': return 'Image not available';
+			case 'makePersonalRequest': return 'Make a Personal Request';
+			case 'myPersonalRequest': return 'My Personal Requests';
+			case 'personalRequestDetails': return 'Personal Request Details';
+			case 'safetyCheckDetails': return 'Safety Check Details';
+			case 'safetyCheckStore': return 'Safety Check Store';
+			case 'safetyCheckProjectDetails': return 'Safety Check Project Details';
 			default: return null;
 		}
 	}
@@ -1262,6 +1280,12 @@ extension on _StringsAr {
 			case 'permissionImage': return 'صورة التصريح';
 			case 'noPermissionsAvailable': return 'لا توجد تصاريح متاحة';
 			case 'imageNotAvailable': return 'الصورة غير متاحة';
+			case 'makePersonalRequest': return 'تقديم طلب شخصي';
+			case 'myPersonalRequest': return 'طلباتي الشخصية';
+			case 'personalRequestDetails': return 'تفاصيل الطلب الشخصي';
+			case 'safetyCheckDetails': return 'تفاصيل التحقق من السلامة';
+			case 'safetyCheckStore': return 'متجر فحص السلامة';
+			case 'safetyCheckProjectDetails': return 'تفاصيل مشروع التحقق من السلامة';
 			default: return null;
 		}
 	}

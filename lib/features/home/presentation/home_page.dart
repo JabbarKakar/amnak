@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:amnak/core/authenticate.dart';
 import 'package:amnak/core/feature/data/models/login_wrapper.dart';
 import 'package:amnak/core/location_manager.dart';
@@ -7,20 +5,10 @@ import 'package:amnak/core/view/widgets/language_direction.dart';
 import 'package:amnak/core/view/widgets/my_list_tile.dart';
 import 'package:amnak/core/view/widgets/profile_img_picker.dart';
 import 'package:amnak/export.dart';
-import 'package:amnak/features/employee_evaluation/view/employee_evaluation_page.dart';
 import 'package:amnak/features/employee_permissions/view/employee_permissions_page.dart';
 import 'package:amnak/features/home/presentation/home_card.dart';
 import 'package:amnak/features/home/presentation/home_cubit.dart';
-import 'package:amnak/features/make_personal_request/view/make_personal_request_view.dart';
-import 'package:amnak/features/personal_request/view/personal_request_view.dart';
-import 'package:amnak/features/personal_request_types/view/personal_request_type_view.dart';
-import 'package:amnak/features/safety_check_store/view/safety_check_store_view.dart';
-import 'package:amnak/features/safety_checks/view/safety_check_items_view.dart';
-import 'package:amnak/features/walki/view/walkie_talkie_contacts_page.dart';
-import 'package:amnak/features/walki/view/walkie_talkie_messages_page.dart';
-import 'package:provider/provider.dart';
 
-import '../../personal_request_types/provider/pesonal_request_provider_types.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,56 +51,19 @@ class _HomePageState extends State<HomePage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+
                   ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SafetyCheckStoreScreen(),
+                              builder: (context) => EmployeePermissionsPage(),
                             ));
                       },
-                      child: Text("Goooo")),
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(
-                  //             builder: (context) => WalkieTalkieContactsPage(),
-                  //           ));
-                  //     },
-                  //     child: Text("Walkie Talkie")),
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(
-                  //             builder: (context) => WalkieTalkieMessagesPage(),
-                  //           ));
-                  //     },
-                  //     child: Text("All Messages")),
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(
-                  //             builder: (context) => EmployeeEvaluationPage(),
-                  //           ));
-                  //     },
-                  //     child: Text(
-                  //       'Employee Evaluation',
-                  //     )),
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(
-                  //             builder: (context) => EmployeePermissionsPage(),
-                  //           ));
-                  //     },
-                  //     child: Text(
-                  //       'Employee Permissions',
-                  //       // context.t.employeePermissions,
-                  //     )),
+                      child: Text(
+                        'Employee Permissions',
+                        // context.t.employeePermissions,
+                      )),
                   10.heightBox,
                   if (user != null)
                     MyListTile(
