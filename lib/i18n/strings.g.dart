@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 476 (238 per locale)
+/// Strings: 536 (268 per locale)
 ///
-/// Built on 2025-07-02 at 11:44 UTC
+/// Built on 2025-07-05 at 21:20 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -386,6 +386,36 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get enterValidPass => 'Please enter a valid password';
 	String get passwordShouldBe6Char => 'Password should be at least 6 characters';
 	String get guest => 'Guest';
+	String get employeeEvaluation => 'Employee Evaluation';
+	String get evaluationDetails => 'Evaluation Details';
+	String get evaluationSummary => 'Evaluation Summary';
+	String get evaluationItems => 'Evaluation Items';
+	String get totalScore => 'Total Score';
+	String get averageScore => 'Average Score';
+	String get numberOfItems => 'Number of Items';
+	String get evaluationDate => 'Evaluation Date';
+	String get evaluationTitle => 'Evaluation Title';
+	String get evaluationItem => 'Evaluation Item';
+	String get score => 'Score';
+	String get noEvaluationsAvailable => 'No evaluations available';
+	String get retry => 'Retry';
+	String get errorLoadingEvaluations => 'Error loading evaluations';
+	String get errorLoadingDetails => 'Error loading details';
+	String get noInternetConnection => 'No internet connection';
+	String get failedToLoadEvaluations => 'Failed to load evaluations';
+	String get failedToLoadDetails => 'Failed to load details';
+	String get noDetailsAvailable => 'No details available';
+	String get date => 'Date';
+	String get undefined => 'Undefined';
+	String get employeePermissions => 'Employee Permissions';
+	String get permissionDetails => 'Permission Details';
+	String get permissionInformation => 'Permission Information';
+	String get permissionType => 'Permission Type';
+	String get permissionDate => 'Permission Date';
+	String get permissionId => 'Permission ID';
+	String get permissionImage => 'Permission Image';
+	String get noPermissionsAvailable => 'No permissions available';
+	String get imageNotAvailable => 'Image not available';
 }
 
 // Path: <root>
@@ -424,8 +454,8 @@ class _StringsAr implements Translations {
 	@override String get confirmCode => 'كود التحقيق';
 	@override String get save => 'حفظ';
 	@override String get login => 'تسجيل الدخول';
-	@override String get courses => 'Courses';
-	@override String get lectures => 'Lectures';
+	@override String get courses => 'دورات';
+	@override String get lectures => 'محاضرات';
 	@override String get project => 'مشروع';
 	@override String get title => 'عنوان';
 	@override String get terms => 'الشروط والاحكام';
@@ -650,6 +680,36 @@ class _StringsAr implements Translations {
 	@override String get AndCreativesAndReadingEnthusiastsInMiddleEast => ' والمبدعين وعشاق القراءة في الشرق الأوسط';
 	@override String get iHaveAnAccount => 'لدي حساب';
 	@override String get guest => 'زائر';
+	@override String get employeeEvaluation => 'تقييم الموظفين';
+	@override String get evaluationDetails => 'تفاصيل التقييم';
+	@override String get evaluationSummary => 'ملخص التقييم';
+	@override String get evaluationItems => 'عناصر التقييم';
+	@override String get totalScore => 'المجموع الكلي';
+	@override String get averageScore => 'المتوسط';
+	@override String get numberOfItems => 'عدد العناصر';
+	@override String get evaluationDate => 'تاريخ التقييم';
+	@override String get evaluationTitle => 'عنوان التقييم';
+	@override String get evaluationItem => 'عنصر التقييم';
+	@override String get score => 'الدرجة';
+	@override String get noEvaluationsAvailable => 'لا توجد تقييمات متاحة';
+	@override String get retry => 'إعادة المحاولة';
+	@override String get errorLoadingEvaluations => 'خطأ في تحميل التقييمات';
+	@override String get errorLoadingDetails => 'خطأ في تحميل التفاصيل';
+	@override String get noInternetConnection => 'لا يوجد اتصال بالإنترنت';
+	@override String get failedToLoadEvaluations => 'فشل في تحميل التقييمات';
+	@override String get failedToLoadDetails => 'فشل في تحميل التفاصيل';
+	@override String get noDetailsAvailable => 'لا توجد تفاصيل متاحة';
+	@override String get date => 'التاريخ';
+	@override String get undefined => 'غير محدد';
+	@override String get employeePermissions => 'تصاريح الموظفين';
+	@override String get permissionDetails => 'تفاصيل التصريح';
+	@override String get permissionInformation => 'معلومات التصريح';
+	@override String get permissionType => 'نوع التصريح';
+	@override String get permissionDate => 'تاريخ التصريح';
+	@override String get permissionId => 'رقم التصريح';
+	@override String get permissionImage => 'صورة التصريح';
+	@override String get noPermissionsAvailable => 'لا توجد تصاريح متاحة';
+	@override String get imageNotAvailable => 'الصورة غير متاحة';
 }
 
 /// Flat map(s) containing all translations.
@@ -896,6 +956,36 @@ extension on Translations {
 			case 'enterValidPass': return 'Please enter a valid password';
 			case 'passwordShouldBe6Char': return 'Password should be at least 6 characters';
 			case 'guest': return 'Guest';
+			case 'employeeEvaluation': return 'Employee Evaluation';
+			case 'evaluationDetails': return 'Evaluation Details';
+			case 'evaluationSummary': return 'Evaluation Summary';
+			case 'evaluationItems': return 'Evaluation Items';
+			case 'totalScore': return 'Total Score';
+			case 'averageScore': return 'Average Score';
+			case 'numberOfItems': return 'Number of Items';
+			case 'evaluationDate': return 'Evaluation Date';
+			case 'evaluationTitle': return 'Evaluation Title';
+			case 'evaluationItem': return 'Evaluation Item';
+			case 'score': return 'Score';
+			case 'noEvaluationsAvailable': return 'No evaluations available';
+			case 'retry': return 'Retry';
+			case 'errorLoadingEvaluations': return 'Error loading evaluations';
+			case 'errorLoadingDetails': return 'Error loading details';
+			case 'noInternetConnection': return 'No internet connection';
+			case 'failedToLoadEvaluations': return 'Failed to load evaluations';
+			case 'failedToLoadDetails': return 'Failed to load details';
+			case 'noDetailsAvailable': return 'No details available';
+			case 'date': return 'Date';
+			case 'undefined': return 'Undefined';
+			case 'employeePermissions': return 'Employee Permissions';
+			case 'permissionDetails': return 'Permission Details';
+			case 'permissionInformation': return 'Permission Information';
+			case 'permissionType': return 'Permission Type';
+			case 'permissionDate': return 'Permission Date';
+			case 'permissionId': return 'Permission ID';
+			case 'permissionImage': return 'Permission Image';
+			case 'noPermissionsAvailable': return 'No permissions available';
+			case 'imageNotAvailable': return 'Image not available';
 			default: return null;
 		}
 	}
@@ -916,8 +1006,8 @@ extension on _StringsAr {
 			case 'confirmCode': return 'كود التحقيق';
 			case 'save': return 'حفظ';
 			case 'login': return 'تسجيل الدخول';
-			case 'courses': return 'Courses';
-			case 'lectures': return 'Lectures';
+			case 'courses': return 'دورات';
+			case 'lectures': return 'محاضرات';
 			case 'project': return 'مشروع';
 			case 'title': return 'عنوان';
 			case 'terms': return 'الشروط والاحكام';
@@ -1142,6 +1232,36 @@ extension on _StringsAr {
 			case 'AndCreativesAndReadingEnthusiastsInMiddleEast': return ' والمبدعين وعشاق القراءة في الشرق الأوسط';
 			case 'iHaveAnAccount': return 'لدي حساب';
 			case 'guest': return 'زائر';
+			case 'employeeEvaluation': return 'تقييم الموظفين';
+			case 'evaluationDetails': return 'تفاصيل التقييم';
+			case 'evaluationSummary': return 'ملخص التقييم';
+			case 'evaluationItems': return 'عناصر التقييم';
+			case 'totalScore': return 'المجموع الكلي';
+			case 'averageScore': return 'المتوسط';
+			case 'numberOfItems': return 'عدد العناصر';
+			case 'evaluationDate': return 'تاريخ التقييم';
+			case 'evaluationTitle': return 'عنوان التقييم';
+			case 'evaluationItem': return 'عنصر التقييم';
+			case 'score': return 'الدرجة';
+			case 'noEvaluationsAvailable': return 'لا توجد تقييمات متاحة';
+			case 'retry': return 'إعادة المحاولة';
+			case 'errorLoadingEvaluations': return 'خطأ في تحميل التقييمات';
+			case 'errorLoadingDetails': return 'خطأ في تحميل التفاصيل';
+			case 'noInternetConnection': return 'لا يوجد اتصال بالإنترنت';
+			case 'failedToLoadEvaluations': return 'فشل في تحميل التقييمات';
+			case 'failedToLoadDetails': return 'فشل في تحميل التفاصيل';
+			case 'noDetailsAvailable': return 'لا توجد تفاصيل متاحة';
+			case 'date': return 'التاريخ';
+			case 'undefined': return 'غير محدد';
+			case 'employeePermissions': return 'تصاريح الموظفين';
+			case 'permissionDetails': return 'تفاصيل التصريح';
+			case 'permissionInformation': return 'معلومات التصريح';
+			case 'permissionType': return 'نوع التصريح';
+			case 'permissionDate': return 'تاريخ التصريح';
+			case 'permissionId': return 'رقم التصريح';
+			case 'permissionImage': return 'صورة التصريح';
+			case 'noPermissionsAvailable': return 'لا توجد تصاريح متاحة';
+			case 'imageNotAvailable': return 'الصورة غير متاحة';
 			default: return null;
 		}
 	}

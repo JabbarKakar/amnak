@@ -11,6 +11,7 @@ abstract class Routes {
   static const confirm = '/confirm';
   static const chatPersons = '/chatPersons';
   static const walki = '/walki';
+  static const walkiContacts = '/walkiContacts';
   static const walkiPersons = '/walkiPersons';
   static const projects = '/projects';
   static const instructions = '/instructions';
@@ -25,4 +26,6 @@ abstract class Routes {
   static const landing = '/landing';
   static const addReport = '/addReport';
   static const notifications = '/notifications';
+  static const employeeEvaluation = '/employeeEvaluation';
+  static const employeePermissions = '/employeePermissions';
 }

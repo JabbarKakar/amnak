@@ -27,6 +27,9 @@ import 'package:amnak/features/terms_privacy/presentation/page.dart';
 import 'package:amnak/features/visitors/presentation/visitor_details_page.dart';
 import 'package:amnak/features/visitors/presentation/visitors_page.dart';
 import 'package:amnak/features/walki/walki_page.dart';
+import 'package:amnak/features/walki/view/walkie_talkie_contacts_page.dart';
+import 'package:amnak/features/employee_evaluation/view/employee_evaluation_page.dart';
+import 'package:amnak/features/employee_permissions/view/employee_permissions_page.dart';
 
 import '../../export.dart';
 
@@ -44,7 +47,7 @@ class AppRouter {
           path: Routes.animatedSplash,
           builder: (context, state) => AnimatedSplash(
             home:
-            sl<GetStorage>().hasData(kToken) ? Routes.home : Routes.landing,
+                sl<GetStorage>().hasData(kToken) ? Routes.home : Routes.landing,
             title: '',
             duration: Duration.hoursPerDay,
             type: AnimatedSplashType.StaticDuration,
@@ -129,13 +132,23 @@ class AppRouter {
           path: Routes.chatDetails,
           builder: (context, state) => ChatDetailsPage(
             personModel:
-            (state.extra as Map<String, dynamic>)['person'] as PersonModel,
+                (state.extra as Map<String, dynamic>)['person'] as PersonModel,
           ),
         ),
         GoRoute(
           name: Routes.notifications,
           path: Routes.notifications,
           builder: (context, state) => const NotificationsPage(),
+        ),
+        GoRoute(
+          name: Routes.employeeEvaluation,
+          path: Routes.employeeEvaluation,
+          builder: (context, state) => const EmployeeEvaluationPage(),
+        ),
+        GoRoute(
+          name: Routes.employeePermissions,
+          path: Routes.employeePermissions,
+          builder: (context, state) => const EmployeePermissionsPage(),
         ),
         GoRoute(
           name: Routes.visitors,
@@ -158,6 +171,11 @@ class AppRouter {
               channel: args['channel'] as String,
             );
           },
+        ),
+        GoRoute(
+          name: Routes.walkiContacts,
+          path: Routes.walkiContacts,
+          builder: (context, state) => const WalkieTalkieContactsPage(),
         ),
         GoRoute(
           name: Routes.visitorDetails,
@@ -205,7 +223,7 @@ class AppRouter {
                   name: Routes.profile,
                   path: Routes.profile,
                   builder: (context, state) =>
-                  const LanguageDirection(child: ProfilePage()),
+                      const LanguageDirection(child: ProfilePage()),
                 ),
               ],
             ),

@@ -9,6 +9,9 @@ import 'package:requests_inspector/requests_inspector.dart';
 import 'core/injection_container.dart' as di;
 import 'export.dart';
 import 'features/safety_checks/provider/safety_check_provider.dart';
+import 'features/employee_evaluation/provider/employee_evaluation_provider.dart';
+import 'features/employee_permissions/provider/employee_permission_provider.dart';
+import 'features/walki/provider/walkie_talkie_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,13 +23,23 @@ Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(statusBarColor: kPrimaryColor),
   );
-  getInitialLanguage();
+
   runApp(
     RequestsInspector(
       navigatorKey: null,
       enabled: kDebugMode,
       showInspectorOn: ShowInspectorOn.LongPress,
-      child: TranslationProvider(child: const MyApp()),
+      child: TranslationProvider(
+        child: Builder(
+          builder: (context) {
+            // Initialize language after TranslationProvider is available
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              getInitialLanguage();
+            });
+            return const MyApp();
+          },
+        ),
+      ),
     ),
   );
 }
@@ -44,6 +57,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => PersonalRequestTypesProvider()),
         ChangeNotifierProvider(create: (_) => PersonalRequestDetailProvider()),
         ChangeNotifierProvider(create: (_) => SafetyCheckProvider()),
+        ChangeNotifierProvider(create: (_) => EmployeeEvaluationProvider()),
+        ChangeNotifierProvider(create: (_) => EmployeePermissionProvider()),
+        ChangeNotifierProvider(create: (_) => WalkieTalkieProvider()),
         ChangeNotifierProvider(create: (_) => PersonalRequestProvider()),
         ChangeNotifierProvider(create: (_) => MakePersonalRequestProvider()),
         // Add more providers here as needed
