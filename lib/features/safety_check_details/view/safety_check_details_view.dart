@@ -10,7 +10,7 @@ class SafetyCheckDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => SafetyCheckDetailsProvider()..fetchSafetyCheckDetails(safetyCheckId),
+      create: (_) => SafetyCheckDetailsProvider()..fetchSafetyCheckDetails(id: safetyCheckId),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('تفاصيل فحص السلامة'),
