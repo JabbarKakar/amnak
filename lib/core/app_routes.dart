@@ -12,6 +12,7 @@ abstract class Routes {
   static const chatPersons = '/chatPersons';
   static const walki = '/walki';
   static const walkiContacts = '/walkiContacts';
+  static const walkiMessages = '/walkiMessages';
   static const walkiPersons = '/walkiPersons';
   static const projects = '/projects';
   static const instructions = '/instructions';
