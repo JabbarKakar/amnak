@@ -2,12 +2,14 @@ import 'package:amnak/core/view/widgets/language_direction.dart';
 import 'package:amnak/export.dart';
 import 'package:amnak/features/walki/models/walkie_talkie_models.dart';
 import 'package:amnak/features/walki/provider/walkie_talkie_provider.dart';
+import 'package:amnak/features/walki/view/walkie_talkie_messages_page.dart';
 import 'package:amnak/features/walki/walki_page.dart';
 import 'package:provider/provider.dart';
 
 class WalkieTalkieContactsPage extends StatefulWidget {
-  const WalkieTalkieContactsPage({super.key});
+  const WalkieTalkieContactsPage({super.key, required this.projectId});
 
+  final int projectId;
   @override
   State<WalkieTalkieContactsPage> createState() =>
       _WalkieTalkieContactsPageState();
@@ -19,7 +21,7 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
     super.initState();
     // Load contacts for project ID 9 (you can make this dynamic)
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<WalkieTalkieProvider>().getWalkieTalkieContacts(9);
+      context.read<WalkieTalkieProvider>().getWalkieTalkieContacts(widget.projectId);
     });
   }
 
@@ -29,7 +31,7 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Walkie Talkie',
+            'Walkie Talkie Contacts',
             style: context.textTheme.titleLarge?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -38,6 +40,14 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
           backgroundColor: kPrimaryColor,
           elevation: 0,
           iconTheme: const IconThemeData(color: Colors.white),
+          actions: [
+            IconButton(
+              onPressed: () {
+                context.read<WalkieTalkieProvider>().getWalkieTalkieContacts(widget.projectId);
+              },
+              icon: const Icon(Icons.refresh),
+            ),
+          ],
         ),
         body: Consumer<WalkieTalkieProvider>(
           builder: (context, provider, child) {
@@ -68,7 +78,7 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        provider.getWalkieTalkieContacts(9);
+                        provider.getWalkieTalkieContacts(widget.projectId);
                       },
                       child: const Text('Retry'),
                     ),
@@ -93,9 +103,9 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
                   if (contacts.company != null) ...[
                     _buildSectionTitle('Company'),
                     _buildContactCard(
-                      contacts.company!.name ?? 'Unknown',
+                      contacts.company!.name ?? 'Unknown Company',
                       Icons.business,
-                      () => _startCall(contacts.company!.name ?? 'company'),
+                      () => _startCall(contacts.company!.id??0,contacts.company!.name ?? 'company',contacts.company!.type??'App\\Models\\Company'),
                     ),
                     const SizedBox(height: 20),
                   ],
@@ -107,7 +117,7 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
                     ...contacts.voiceGroups!.map((group) => _buildContactCard(
                           group.name ?? 'Unknown Group',
                           Icons.group,
-                          () => _startCall(group.name ?? 'group'),
+                          () => _startCall(group.id??0,group.name ?? 'group','group${group.id}'),
                         )),
                     const SizedBox(height: 20),
                   ],
@@ -120,7 +130,7 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
                         .map((person) => _buildContactCard(
                               person.name ?? 'Unknown Person',
                               Icons.person,
-                              () => _startCall(person.name ?? 'person'),
+                              () => _startCall(person.id??0,person.name ?? 'person',contacts.company!.type??'App\\Models\\Person'),
                             )),
                   ],
                 ],
@@ -178,17 +188,17 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
     );
   }
 
-  Future<void> _startCall(String channelName) async {
+  Future<void> _startCall(int id, String channelName, String type) async {
     final provider = context.read<WalkieTalkieProvider>();
 
-    // Show loading dialog
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => const Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    // // Show loading dialog
+    // showDialog(
+    //   context: context,
+    //   barrierDismissible: false,
+    //   builder: (context) => const Center(
+    //     child: CircularProgressIndicator(),
+    //   ),
+    // );
 
     try {
       // Generate Agora token
@@ -202,7 +212,8 @@ class _WalkieTalkieContactsPageState extends State<WalkieTalkieContactsPage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => WalkiPage(
+            builder: (context) => WalkieTalkieMessagesPage(
+              id: id, type: type,
               channel: channelName,
               token: provider.agoraTokenWrapper!.data!.token!,
             ),

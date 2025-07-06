@@ -229,11 +229,11 @@ class WalkieTalkieMessageData {
 
   WalkieTalkieMessageData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    voiceGroupId = json['voice_group_id'];
+    voiceGroupId = json['voice_group_id']?.toString();
     channelName = json['channel_name'];
     senderId = json['sender_id'];
     senderType = json['sender_type'];
-    receiverId = json['receiver_id'];
+    receiverId = json['receiver_id']?.toString();
     receiverType = json['receiver_type'];
     message = json['message'];
     audioPath = json['audio_path'];
@@ -252,6 +252,65 @@ class WalkieTalkieMessageData {
     data['message'] = message;
     data['audio_path'] = audioPath;
     data['sent_at'] = sentAt;
+    return data;
+  }
+}
+
+// New models for message lists
+class WalkieTalkieMessagesWrapper {
+  int? status;
+  List<String>? messages;
+  List<WalkieTalkieMessageData>? data;
+
+  WalkieTalkieMessagesWrapper({this.status, this.messages, this.data});
+
+  WalkieTalkieMessagesWrapper.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    messages = json['messages']?.cast<String>();
+    if (json['data'] != null) {
+      data = <WalkieTalkieMessageData>[];
+      json['data'].forEach((v) {
+        data!.add(WalkieTalkieMessageData.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status'] = status;
+    data['messages'] = messages;
+    if (this.data != null) {
+      data['data'] = this.data!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class WalkieTalkieChannelMessagesWrapper {
+  int? status;
+  List<String>? messages;
+  List<WalkieTalkieMessageData>? data;
+
+  WalkieTalkieChannelMessagesWrapper({this.status, this.messages, this.data});
+
+  WalkieTalkieChannelMessagesWrapper.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    messages = json['messages']?.cast<String>();
+    if (json['data'] != null) {
+      data = <WalkieTalkieMessageData>[];
+      json['data'].forEach((v) {
+        data!.add(WalkieTalkieMessageData.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status'] = status;
+    data['messages'] = messages;
+    if (this.data != null) {
+      data['data'] = this.data!.map((v) => v.toJson()).toList();
+    }
     return data;
   }
 }

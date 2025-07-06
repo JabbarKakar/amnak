@@ -25,11 +25,12 @@ Future<void> main() async {
   );
 
   runApp(
-    RequestsInspector(
-      navigatorKey: null,
-      enabled: kDebugMode,
-      showInspectorOn: ShowInspectorOn.LongPress,
-      child: TranslationProvider(
+    // RequestsInspector(
+    //   navigatorKey: null,
+    //   // enabled: kDebugMode,
+    //   showInspectorOn: ShowInspectorOn.LongPress,
+    //   child:
+      TranslationProvider(
         child: Builder(
           builder: (context) {
             // Initialize language after TranslationProvider is available
@@ -40,7 +41,7 @@ Future<void> main() async {
           },
         ),
       ),
-    ),
+    // ),
   );
 }
 

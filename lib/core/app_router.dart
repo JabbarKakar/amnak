@@ -28,6 +28,7 @@ import 'package:amnak/features/visitors/presentation/visitor_details_page.dart';
 import 'package:amnak/features/visitors/presentation/visitors_page.dart';
 import 'package:amnak/features/walki/walki_page.dart';
 import 'package:amnak/features/walki/view/walkie_talkie_contacts_page.dart';
+import 'package:amnak/features/walki/view/walkie_talkie_messages_page.dart';
 import 'package:amnak/features/employee_evaluation/view/employee_evaluation_page.dart';
 import 'package:amnak/features/employee_permissions/view/employee_permissions_page.dart';
 
@@ -175,7 +176,24 @@ class AppRouter {
         GoRoute(
           name: Routes.walkiContacts,
           path: Routes.walkiContacts,
-          builder: (context, state) => const WalkieTalkieContactsPage(),
+          builder: (context, state) {
+            final args = state.extra as Map<String, dynamic>;
+            return WalkieTalkieContactsPage(
+                projectId: args['projectId'] as int);
+          },
+        ),
+        GoRoute(
+          name: Routes.walkiMessages,
+          path: Routes.walkiMessages,
+          builder: (context, state) {
+            final args = state.extra as Map<String, dynamic>;
+            return WalkieTalkieMessagesPage(
+              token: args['token'] as String,
+              channel: args['channel'] as String,
+              id: args['id'] as int,
+              type: args['type'] as String,
+            );
+          },
         ),
         GoRoute(
           name: Routes.visitorDetails,
