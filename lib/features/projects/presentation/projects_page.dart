@@ -34,14 +34,12 @@ class _ProjectsPageState extends State<ProjectsPage> {
                 itemBuilder: (context, index) {
                   final value = state.data!.data![index];
                   return GestureDetector(
-                    onTap: (){
-                      context.pushNamed(Routes.walkiContacts, extra: {
-                        'projectId': value.projectDetails!.id,
-                      });
+                    onTap: () {
+                      context.pushNamed(Routes.safetyCheckProjectDetails,
+                          extra: value.projectDetails!.id.toString());
                     },
                     child: Card(
                       color: context.theme.cardColor,
-
                       child: Column(
                         children: [
                           10.heightBox,

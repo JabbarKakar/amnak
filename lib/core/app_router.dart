@@ -21,8 +21,11 @@ import 'package:amnak/features/home/presentation/home_page.dart';
 import 'package:amnak/features/home/presentation/nav_page.dart';
 import 'package:amnak/features/notifications/presentation/instructions_page.dart';
 import 'package:amnak/features/notifications/presentation/page.dart';
+import 'package:amnak/features/personal_request/view/personal_request_view.dart';
+import 'package:amnak/features/personal_request_types/view/personal_request_type_view.dart';
 import 'package:amnak/features/projects/presentation/projects_page.dart';
 import 'package:amnak/features/report/add_report_page.dart';
+import 'package:amnak/features/safety_checks_project_details/view/safety_checks_project_details_view.dart';
 import 'package:amnak/features/terms_privacy/presentation/page.dart';
 import 'package:amnak/features/visitors/presentation/visitor_details_page.dart';
 import 'package:amnak/features/visitors/presentation/visitors_page.dart';
@@ -200,6 +203,22 @@ class AppRouter {
           path: Routes.visitorDetails,
           builder: (context, state) =>
               VisitorDetailsPage(visitor: state.extra as VisitorModel),
+        ),
+        GoRoute(
+          name: Routes.safetyCheckProjectDetails,
+          path: Routes.safetyCheckProjectDetails,
+          builder: (context, state) =>
+              SafetyCheckProjectDetailsScreen(safetyCheckId: state.extra as String),
+        ),
+        GoRoute(
+          name: Routes.personalRequestScreen,
+          path: Routes.personalRequestScreen,
+          builder: (context, state) => PersonalRequestScreen(),
+        ),
+        GoRoute(
+          name: Routes.personalRequestTypesScreen,
+          path: Routes.personalRequestTypesScreen,
+          builder: (context, state) => PersonalRequestTypesScreen(),
         ),
         StatefulShellRoute.indexedStack(
           builder: (BuildContext context, GoRouterState state,

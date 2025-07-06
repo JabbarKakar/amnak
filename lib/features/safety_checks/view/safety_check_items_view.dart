@@ -2,30 +2,30 @@ import 'package:amnak/features/safety_check_details/view/safety_check_details_vi
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/safety_check_provider.dart';
+import '../provider/safety_check_items_provider.dart';
 
 
 
-class SafetyCheckScreen extends StatefulWidget {
+class SafetyCheckItemsScreen extends StatefulWidget {
 
-  const SafetyCheckScreen({super.key});
+  const SafetyCheckItemsScreen({super.key});
 
   @override
-  State<SafetyCheckScreen> createState() => _SafetyCheckScreenState();
+  State<SafetyCheckItemsScreen> createState() => _SafetyCheckItemsScreenState();
 }
 
-class _SafetyCheckScreenState extends State<SafetyCheckScreen> {
+class _SafetyCheckItemsScreenState extends State<SafetyCheckItemsScreen> {
   @override
   void initState() {
     super.initState();
-    SafetyCheckProvider safetyCheckProvider =
-    Provider.of<SafetyCheckProvider>(context, listen: false);
+    SafetyCheckItemsProvider safetyCheckProvider =
+    Provider.of<SafetyCheckItemsProvider>(context, listen: false);
     safetyCheckProvider.fetchSafetyCheck();
   }
 
   @override
   Widget build(BuildContext context) {
-    final safetyCheckProvider = Provider.of<SafetyCheckProvider>(context);
+    final safetyCheckProvider = Provider.of<SafetyCheckItemsProvider>(context);
 
     return Scaffold(
       appBar: AppBar(

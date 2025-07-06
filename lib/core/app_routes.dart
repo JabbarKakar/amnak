@@ -29,4 +29,9 @@ abstract class Routes {
   static const notifications = '/notifications';
   static const employeeEvaluation = '/employeeEvaluation';
   static const employeePermissions = '/employeePermissions';
+
+
+  static const safetyCheckProjectDetails = '/safetyCheckProjectDetails';
+  static const personalRequestScreen = '/personalRequestScreen';
+  static const personalRequestTypesScreen = '/personalRequestTypesScreen';
 }
