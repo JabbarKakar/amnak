@@ -14,7 +14,8 @@ import 'package:amnak/features/home/presentation/home_cubit.dart';
 import 'package:amnak/features/make_personal_request/view/make_personal_request_view.dart';
 import 'package:amnak/features/personal_request/view/personal_request_view.dart';
 import 'package:amnak/features/personal_request_types/view/personal_request_type_view.dart';
-import 'package:amnak/features/safety_checks/view/safety_check_view.dart';
+import 'package:amnak/features/safety_check_store/view/safety_check_store_view.dart';
+import 'package:amnak/features/safety_checks/view/safety_check_items_view.dart';
 import 'package:amnak/features/walki/view/walkie_talkie_contacts_page.dart';
 import 'package:provider/provider.dart';
 
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SafetyCheckScreen(),
+                              builder: (context) => SafetyCheckStoreScreen(),
                             ));
                       },
                       child: Text("Goooo")),

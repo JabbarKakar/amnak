@@ -1,5 +1,5 @@
-class SafetyCheckModel {
-  SafetyCheckModel({
+class SafetyCheckItemsModel {
+  SafetyCheckItemsModel({
     required this.status,
     required this.messages,
     required this.data,
@@ -9,8 +9,8 @@ class SafetyCheckModel {
   final List<String> messages;
   final List<Datum> data;
 
-  factory SafetyCheckModel.fromJson(Map<String, dynamic> json){
-    return SafetyCheckModel(
+  factory SafetyCheckItemsModel.fromJson(Map<String, dynamic> json){
+    return SafetyCheckItemsModel(
       status: json["status"],
       messages: json["messages"] == null ? [] : List<String>.from(json["messages"]!.map((x) => x)),
       data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),

@@ -33,8 +33,6 @@ class _ProjectsPageState extends State<ProjectsPage> {
                 itemCount: state.data?.data?.length ?? 0,
                 itemBuilder: (context, index) {
                   final value = state.data!.data![index];
-                  debugPrint('Project Details: ${value.projectDetails?.name}, Company: ${value.company?.name}');
-                  debugPrint('Project Details: ${value.projectDetails?.name}, Company: ${value.company?.name}');
                   return GestureDetector(
                     onTap: () {
                       context.pushNamed(Routes.safetyCheckProjectDetails,

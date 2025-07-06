@@ -7,12 +7,12 @@ import 'package:get_it/get_it.dart';
 
 import '../../../core/network/network_info.dart';
 
-class SafetyCheckProvider extends ChangeNotifier {
+class SafetyCheckItemsProvider extends ChangeNotifier {
   APIClient apiClient = APIClient(box: GetIt.instance<LocalDataSource>());
   NetworkInfo networkInfo = GetIt.instance<NetworkInfo>();
 
-  SafetyCheckModel? _safetyCheckModel;
-  SafetyCheckModel? get safetyCheckModel => _safetyCheckModel;
+  SafetyCheckItemsModel? _safetyCheckModel;
+  SafetyCheckItemsModel? get safetyCheckModel => _safetyCheckModel;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
@@ -27,7 +27,7 @@ class SafetyCheckProvider extends ChangeNotifier {
           url: '/safety_check_items',
         );
         if (response.statusCode == 200) {
-          _safetyCheckModel = SafetyCheckModel.fromJson(response.data);
+          _safetyCheckModel = SafetyCheckItemsModel.fromJson(response.data);
           if (_safetyCheckModel?.messages.isNotEmpty ?? false) {
             print('Messages in RequestDetails provider =====>>>>>: ${_safetyCheckModel?.messages}');
             print('Messages Messages in RequestDetails provider =====>>>>>: ${_safetyCheckModel!.data[0].name}');
