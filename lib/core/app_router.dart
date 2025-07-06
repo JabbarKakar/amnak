@@ -22,9 +22,10 @@ import 'package:amnak/features/home/presentation/nav_page.dart';
 import 'package:amnak/features/notifications/presentation/instructions_page.dart';
 import 'package:amnak/features/notifications/presentation/page.dart';
 import 'package:amnak/features/personal_request/view/personal_request_view.dart';
-import 'package:amnak/features/personal_request_types/view/personal_request_type_view.dart';
 import 'package:amnak/features/projects/presentation/projects_page.dart';
 import 'package:amnak/features/report/add_report_page.dart';
+import 'package:amnak/features/safety_check_store/view/safety_check_store_view.dart';
+import 'package:amnak/features/safety_checks/view/safety_check_items_view.dart';
 import 'package:amnak/features/safety_checks_project_details/view/safety_checks_project_details_view.dart';
 import 'package:amnak/features/terms_privacy/presentation/page.dart';
 import 'package:amnak/features/visitors/presentation/visitor_details_page.dart';
@@ -35,6 +36,7 @@ import 'package:amnak/features/employee_evaluation/view/employee_evaluation_page
 import 'package:amnak/features/employee_permissions/view/employee_permissions_page.dart';
 
 import '../../export.dart';
+import '../features/make_personal_request/view/make_personal_request_view.dart';
 
 /// don't use for navigate without context
 final GlobalKey<NavigatorState> navKey = GlobalKey<NavigatorState>();
@@ -198,9 +200,19 @@ class AppRouter {
           builder: (context, state) => PersonalRequestScreen(),
         ),
         GoRoute(
-          name: Routes.personalRequestTypesScreen,
-          path: Routes.personalRequestTypesScreen,
-          builder: (context, state) => PersonalRequestTypesScreen(),
+          name: Routes.safetyCheckItemsScreen,
+          path: Routes.safetyCheckItemsScreen,
+          builder: (context, state) => SafetyCheckItemsScreen(),
+        ),
+        GoRoute(
+          name: Routes.safetyCheckStoreScreen,
+          path: Routes.safetyCheckStoreScreen,
+          builder: (context, state) => SafetyCheckStoreScreen(),
+        ),
+        GoRoute(
+          name: Routes.makePersonalRequestScreen,
+          path: Routes.makePersonalRequestScreen,
+          builder: (context, state) => MakePersonalRequestScreen(),
         ),
         StatefulShellRoute.indexedStack(
           builder: (BuildContext context, GoRouterState state,
