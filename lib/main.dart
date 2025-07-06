@@ -1,4 +1,5 @@
 import 'package:amnak/features/make_personal_request/provider/make_personal_request_provider.dart';
+import 'package:amnak/features/notifications/provider/accept_reject_provider.dart';
 import 'package:amnak/features/personal_request/provider/personal_request_provider.dart';
 import 'package:amnak/features/personal_request_types/provider/pesonal_request_provider_types.dart';
 import 'package:amnak/features/personal_request_detail/provider/personal_request_details_provider.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MakePersonalRequestProvider()),
         ChangeNotifierProvider(create: (_) => SafetyChecksProjectProvider()),
         ChangeNotifierProvider(create: (_) => SafetyCheckStoreProvider()),
+        ChangeNotifierProvider(create: (_) => AcceptRejectProvider()),
         // Add more providers here as needed
       ],
       child: ScreenUtilInit(
