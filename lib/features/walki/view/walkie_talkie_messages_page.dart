@@ -150,16 +150,18 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
       'sender_id': sender_id,
       'sender_type': sender_type,
       'receiver_id': widget.id,
-      'receiver_type': (widget.type == null && widget.type.isEmpty )? widget.type :'Voice Group',
-      'message': message.isNotEmpty?message:'Voice Message',
+      'receiver_type': (widget.type == null && widget.type.isEmpty)
+          ? widget.type
+          : 'Voice Group',
+      'message': message.isNotEmpty ? message : 'Voice Message',
       'audio_path': _recordedFilePath!, // This will be uploaded by the API
     });
+    _messageController.clear();
     context.read<WalkieTalkieProvider>().getChannelMessages(widget.channel);
 
     // Clear the recorded file path
     _recordedFilePath = null;
   }
-
 
   Future<void> _playVoiceMessage(String audioPath, String messageId) async {
     try {
@@ -199,8 +201,6 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
     }
   }
 
-
-
   @override
   void dispose() {
     super.dispose();
@@ -223,7 +223,7 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Walkie Talkie - ${widget.channel}',
+            '${context.t.walkieTalkie} - ${widget.channel}',
             style: context.textTheme.titleLarge?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -255,7 +255,7 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Recording... ${_recordingDuration.inSeconds}s',
+                      context.t.recording,
                       style: context.textTheme.bodyMedium?.copyWith(
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
@@ -270,7 +270,7 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16, vertical: 8),
                       ),
-                      child: const Text('Stop'),
+                      child: Text(context.t.stopRecording),
                     ),
                   ],
                 ),
@@ -298,7 +298,7 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
                     child: TextField(
                       controller: _messageController,
                       decoration: InputDecoration(
-                        hintText: 'Type a message...',
+                        hintText: context.t.typeMessage,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
                           borderSide: BorderSide.none,
@@ -434,7 +434,7 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'No messages in this channel',
+                  context.t.noMessagesInChannel,
                   style: context.textTheme.titleMedium?.copyWith(
                     color: Colors.grey[600],
                   ),
@@ -548,14 +548,14 @@ class _WalkiPageState extends State<WalkieTalkieMessagesPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Voice Message',
+                            context.t.voiceMessage,
                             style: context.textTheme.bodyMedium?.copyWith(
                               color: kPrimaryColor,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           Text(
-                            'Tap to play',
+                            context.t.tapToPlay,
                             style: context.textTheme.bodySmall?.copyWith(
                               color: Colors.grey[600],
                             ),
