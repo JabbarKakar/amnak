@@ -120,8 +120,10 @@ class _PersonalRequestScreenState extends State<PersonalRequestScreen> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: InkWell(
-                        onTap: () {
-                        },
+                          // onTap: (){
+                          //   Navigator.push(context, MaterialPageRoute(
+                          //     builder: (context) => PersonalRequestDetailScreen( requestId: datum.id!.toInt(),),));
+                          // },
                         borderRadius: BorderRadius.circular(16),
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),

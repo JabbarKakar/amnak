@@ -31,4 +31,6 @@ abstract class Routes {
 
 
   static const safetyCheckProjectDetails = '/safetyCheckProjectDetails';
+  static const personalRequestScreen = '/personalRequestScreen';
+  static const personalRequestTypesScreen = '/personalRequestTypesScreen';
 }

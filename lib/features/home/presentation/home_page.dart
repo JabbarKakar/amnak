@@ -162,9 +162,30 @@ class _HomePageState extends State<HomePage> {
                         imagePath: Assets.imagesGuests,
                         onTap: () => context.pushNamed(Routes.courses),
                       ),
+                      HomeCard(
+                        title: "Personal Request",
+                        imagePath: Assets.imagesGuests,
+                        onTap: () => context.pushNamed(Routes.personalRequestScreen),
+                      ),
                     ],
                   ),
                   10.heightBox,
+                  Row(
+                    children: [
+                      HomeCard(
+                        title: 'Personal Request Types',
+                        imagePath: Assets.imagesGuests,
+                        onTap: () =>
+                            context.pushNamed(Routes.personalRequestTypesScreen),
+                      ),
+                      HomeCard(
+                        title: 'Make Personal Request',
+                        imagePath: Assets.imagesGuests,
+                        onTap: () =>
+                            context.pushNamed(Routes.employeePermissions),
+                      ),
+                    ],
+                  ),
                   Row(
                     children: [
                       HomeCard(
