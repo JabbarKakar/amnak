@@ -2,7 +2,7 @@
 
 import 'package:amnak/core/api_client.dart';
 import 'package:amnak/export.dart';
-import 'package:amnak/features/personal_request/model/model.dart';
+import 'package:amnak/features/personal_request_types/model/personal_request_type_model.dart';
 import 'package:amnak/features/personal_request_detail/model/personal_request_detail_model.dart';
 import 'package:get_it/get_it.dart';
 
@@ -25,7 +25,7 @@ class PersonalRequestDetailProvider extends ChangeNotifier {
         notifyListeners();
 
         final response = await apiClient.get(
-          url: '/personal_request/$id',
+          url: '/personal_request_types/$id',
         );
         if (response.statusCode == 200) {
           _personalRequestDetailModel = PersonalRequestDetailModel.fromJson(response.data);

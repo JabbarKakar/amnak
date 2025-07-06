@@ -38,6 +38,7 @@ class APIClient {
     };
 
     if (await box.containsKey('token')) {
+
       final userRaw = await box.read(kUser);
       Map<String, dynamic> user;
       if (userRaw is String) {

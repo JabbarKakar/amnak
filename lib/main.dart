@@ -1,4 +1,6 @@
-import 'package:amnak/features/personal_request/provider/pesonal_request_provider.dart';
+import 'package:amnak/features/make_personal_request/provider/make_personal_request_provider.dart';
+import 'package:amnak/features/personal_request/provider/personal_request_provider.dart';
+import 'package:amnak/features/personal_request_types/provider/pesonal_request_provider_types.dart';
 import 'package:amnak/features/personal_request_detail/provider/personal_request_details_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
@@ -52,12 +54,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => PersonalRequestProvider()),
+        ChangeNotifierProvider(create: (_) => PersonalRequestTypesProvider()),
         ChangeNotifierProvider(create: (_) => PersonalRequestDetailProvider()),
         ChangeNotifierProvider(create: (_) => SafetyCheckProvider()),
         ChangeNotifierProvider(create: (_) => EmployeeEvaluationProvider()),
         ChangeNotifierProvider(create: (_) => EmployeePermissionProvider()),
         ChangeNotifierProvider(create: (_) => WalkieTalkieProvider()),
+        ChangeNotifierProvider(create: (_) => PersonalRequestProvider()),
+        ChangeNotifierProvider(create: (_) => MakePersonalRequestProvider()),
         // Add more providers here as needed
       ],
       child: ScreenUtilInit(

@@ -11,12 +11,14 @@ import 'package:amnak/features/employee_evaluation/view/employee_evaluation_page
 import 'package:amnak/features/employee_permissions/view/employee_permissions_page.dart';
 import 'package:amnak/features/home/presentation/home_card.dart';
 import 'package:amnak/features/home/presentation/home_cubit.dart';
-import 'package:amnak/features/personal_request/view/personal_request_type_view.dart';
+import 'package:amnak/features/make_personal_request/view/make_personal_request_view.dart';
+import 'package:amnak/features/personal_request/view/personal_request_view.dart';
+import 'package:amnak/features/personal_request_types/view/personal_request_type_view.dart';
 import 'package:amnak/features/safety_checks/view/safety_check_view.dart';
 import 'package:amnak/features/walki/view/walkie_talkie_contacts_page.dart';
 import 'package:provider/provider.dart';
 
-import '../../personal_request/provider/pesonal_request_provider.dart';
+import '../../personal_request_types/provider/pesonal_request_provider_types.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

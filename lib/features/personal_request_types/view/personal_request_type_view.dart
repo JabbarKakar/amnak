@@ -1,4 +1,4 @@
-import 'package:amnak/features/personal_request/provider/pesonal_request_provider.dart';
+import 'package:amnak/features/personal_request_types/provider/pesonal_request_provider_types.dart';
 import 'package:amnak/features/personal_request_detail/view/personal_request_detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -15,14 +15,14 @@ class _PersonalRequestTypesScreenState extends State<PersonalRequestTypesScreen>
   @override
   void initState() {
     super.initState();
-    PersonalRequestProvider personalRequestProvider =
-    Provider.of<PersonalRequestProvider>(context, listen: false);
+    PersonalRequestTypesProvider personalRequestProvider =
+    Provider.of<PersonalRequestTypesProvider>(context, listen: false);
     personalRequestProvider.fetchPersonalRequestTypes();
   }
 
   @override
   Widget build(BuildContext context) {
-    final personalRequestProvider = Provider.of<PersonalRequestProvider>(context);
+    final personalRequestProvider = Provider.of<PersonalRequestTypesProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
