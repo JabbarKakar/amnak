@@ -88,7 +88,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                  .1.sh.heightBox,
+                  SizedBox(height: 10,),
+                  // .1.sh.heightBox,
                   Row(
                     children: [
                       HomeCard(
