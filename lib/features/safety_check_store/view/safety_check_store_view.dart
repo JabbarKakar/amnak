@@ -152,6 +152,8 @@ class _SafetyCheckStoreScreenState extends State<SafetyCheckStoreScreen> {
                     safetyCheckProvider.isLoading
                         ? const Center(child: CircularProgressIndicator())
                         : DropdownButtonFormField<int>(
+                      isDense: true,
+                      isExpanded: true,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
@@ -221,6 +223,8 @@ class _SafetyCheckStoreScreenState extends State<SafetyCheckStoreScreen> {
                         } else if (state.status == RxStatus.success &&
                             state.data?.data != null) {
                           return DropdownButtonFormField<int>(
+                            isDense: true,
+                            isExpanded: true,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
@@ -272,6 +276,8 @@ class _SafetyCheckStoreScreenState extends State<SafetyCheckStoreScreen> {
                     ),
                     const SizedBox(height: 8),
                     DropdownButtonFormField<String>(
+                      isDense: true,
+                      isExpanded: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),

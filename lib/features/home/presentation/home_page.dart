@@ -123,16 +123,16 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     children: [
                       HomeCard(
-                        title: context.t.personalRequestTypes,
+                        title: context.t.safetyCheckStore,
                         imagePath: Assets.imagesGuests,
-                        onTap: () => context
-                            .pushNamed(Routes.personalRequestTypesScreen),
+                        onTap: () =>
+                            context.pushNamed(Routes.safetyCheckStoreScreen),
                       ),
                       HomeCard(
                         title: context.t.makePersonalRequest,
                         imagePath: Assets.imagesGuests,
                         onTap: () =>
-                            context.pushNamed(Routes.employeePermissions),
+                            context.pushNamed(Routes.makePersonalRequestScreen),
                       ),
                     ],
                   ),
