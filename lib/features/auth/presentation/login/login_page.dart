@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                       "identifier": identifierTextController.text,
                       "password": passTextController.text,
                       "device_token": "123",
-                    });
+                    },);
                     if (res is LoginWrapper) {
                       context.goNamed(Routes.home);
                     }

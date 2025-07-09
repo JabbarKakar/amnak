@@ -8,7 +8,6 @@ import 'package:amnak/export.dart';
 import 'package:amnak/features/home/presentation/home_card.dart';
 import 'package:amnak/features/home/presentation/home_cubit.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -47,7 +46,6 @@ class _HomePageState extends State<HomePage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  10.heightBox,
                   if (user != null)
                     MyListTile(
                       leading: ProfileImgPicker(
@@ -61,7 +59,8 @@ class _HomePageState extends State<HomePage> {
                           await Authenticate.authenticate(
                             context: context,
                             onSuccess: () async {
-                              showSuccessSnack(message: 'Authenticated');
+                              showSuccessSnack(
+                                  message: context.t.authenticated);
                               var myLocation = await getLocationPermission();
                               final res = await cubit.attend({
                                 "longitude": myLocation?.longitude.toString(),
@@ -72,6 +71,7 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         icon: const Icon(Icons.fingerprint),
+                        tooltip: context.t.useFingerprint,
                       ),
                       children: [
                         Text(
@@ -84,7 +84,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                  20.heightBox,
+                  SizedBox(height: 10,),
+                  // .1.sh.heightBox,
                   Row(
                     children: [
                       HomeCard(
@@ -110,13 +111,20 @@ class _HomePageState extends State<HomePage> {
                       HomeCard(
                         title: context.t.myPersonalRequest,
                         imagePath: Assets.imagesGuests,
-                        onTap: () => context.pushNamed(Routes.personalRequestScreen),
+                        onTap: () =>
+                            context.pushNamed(Routes.personalRequestScreen),
                       ),
                     ],
                   ),
                   10.heightBox,
                   Row(
                     children: [
+                      HomeCard(
+                        title: context.t.safetyCheckStore,
+                        imagePath: Assets.imagesGuests,
+                        onTap: () =>
+                            context.pushNamed(Routes.safetyCheckStoreScreen),
+                      ),
                       HomeCard(
                         title: context.t.makePersonalRequest,
                         imagePath: Assets.imagesGuests,
@@ -125,33 +133,17 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
+                  10.heightBox,
                   Row(
                     children: [
-
                       HomeCard(
-                        title: context.t.safetyCheckStore,
-                        imagePath: Assets.imagesGuests,
-                        onTap: () =>
-                            context.pushNamed(Routes.safetyCheckStoreScreen),
-                      ),
-                      HomeCard(
-                        title: context.t.employeeEvaluation.isNotEmpty
-                            ? context.t.employeeEvaluation
-                            : 'Employee Evaluation',
+                        title: context.t.employeeEvaluation,
                         imagePath: Assets.imagesGuests,
                         onTap: () =>
                             context.pushNamed(Routes.employeeEvaluation),
                       ),
-                    ],
-                  ),
-                  10.heightBox,
-                  Row(
-                    children: [
-
                       HomeCard(
-                        title: context.t.employeePermissions.isNotEmpty
-                            ? context.t.employeePermissions
-                            : 'Employee Permissions',
+                        title: context.t.employeePermissions,
                         imagePath: Assets.imagesGuests,
                         onTap: () =>
                             context.pushNamed(Routes.employeePermissions),

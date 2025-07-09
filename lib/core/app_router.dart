@@ -30,6 +30,7 @@ import 'package:amnak/features/safety_checks_project_details/view/safety_checks_
 import 'package:amnak/features/terms_privacy/presentation/page.dart';
 import 'package:amnak/features/visitors/presentation/visitor_details_page.dart';
 import 'package:amnak/features/visitors/presentation/visitors_page.dart';
+import 'package:amnak/features/walki/projects_page.dart';
 import 'package:amnak/features/walki/walki_page.dart';
 import 'package:amnak/features/walki/view/walkie_talkie_contacts_page.dart';
 import 'package:amnak/features/walki/view/walkie_talkie_messages_page.dart';
@@ -179,6 +180,13 @@ class AppRouter {
           },
         ),
         GoRoute(
+          name: Routes.walkieProjects,
+          path: Routes.walkieProjects,
+          builder: (context, state) {
+            return WalkieTalkieProjectsPage();
+          },
+        ),
+        GoRoute(
           name: Routes.walkiContacts,
           path: Routes.walkiContacts,
           builder: (context, state) {
@@ -262,7 +270,8 @@ class AppRouter {
                 GoRoute(
                   name: Routes.walkiPersons,
                   path: Routes.walkiPersons,
-                  builder: (context, state) => const WalkiPersonsPage(),
+                  builder: (context, state) => const WalkieTalkieProjectsPage(),
+                  // builder: (context, state) => const WalkiPersonsPage(),
                 ),
               ],
             ),

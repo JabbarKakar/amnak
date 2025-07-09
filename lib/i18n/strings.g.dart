@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 548 (274 per locale)
+/// Strings: 590 (295 per locale)
 ///
-/// Built on 2025-07-06 at 18:32 UTC
+/// Built on 2025-07-06 at 20:07 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -422,6 +422,27 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get safetyCheckDetails => 'Safety Check Details';
 	String get safetyCheckStore => 'Safety Check Store';
 	String get safetyCheckProjectDetails => 'Safety Check Project Details';
+	String get personalRequestTypes => 'Personal Request Types';
+	String get walkieTalkie => 'Walkie Talkie';
+	String get voiceMessage => 'Voice Message';
+	String get typeMessage => 'Type a message...';
+	String get recordVoiceMessage => 'Record Voice Message';
+	String get stopRecording => 'Stop Recording';
+	String get recording => 'Recording...';
+	String get holdToSpeak => 'Hold to speak';
+	String get speaking => 'Speaking...';
+	String get connected => 'Connected';
+	String get disconnected => 'Disconnected';
+	String get usersOnline => 'users online';
+	String get noMessagesInChannel => 'No messages in this channel';
+	String get tapToPlay => 'Tap to play';
+	String get authenticated => 'Authenticated';
+	String get attendance => 'Attendance';
+	String get attendanceSuccess => 'Attendance recorded successfully';
+	String get attendanceFailed => 'Failed to record attendance';
+	String get locationRequired => 'Location permission required for attendance';
+	String get fingerprint => 'Fingerprint';
+	String get useFingerprint => 'Use fingerprint to record attendance';
 }
 
 // Path: <root>
@@ -719,9 +740,30 @@ class _StringsAr implements Translations {
 	@override String get makePersonalRequest => 'تقديم طلب شخصي';
 	@override String get myPersonalRequest => 'طلباتي الشخصية';
 	@override String get personalRequestDetails => 'تفاصيل الطلب الشخصي';
-	@override String get safetyCheckDetails => 'تفاصيل التحقق من السلامة';
+	@override String get safetyCheckDetails => 'تفاصيل فحص السلامة';
 	@override String get safetyCheckStore => 'متجر فحص السلامة';
-	@override String get safetyCheckProjectDetails => 'تفاصيل مشروع التحقق من السلامة';
+	@override String get safetyCheckProjectDetails => 'تفاصيل مشروع فحص السلامة';
+	@override String get personalRequestTypes => 'أنواع الطلبات الشخصية';
+	@override String get walkieTalkie => 'جهاز اتصال لاسلكي';
+	@override String get voiceMessage => 'رسالة صوتية';
+	@override String get typeMessage => 'اكتب رسالة...';
+	@override String get recordVoiceMessage => 'تسجيل رسالة صوتية';
+	@override String get stopRecording => 'إيقاف التسجيل';
+	@override String get recording => 'جاري التسجيل...';
+	@override String get holdToSpeak => 'اضغط للحديث';
+	@override String get speaking => 'جاري الحديث...';
+	@override String get connected => 'متصل';
+	@override String get disconnected => 'غير متصل';
+	@override String get usersOnline => 'مستخدمين متصلين';
+	@override String get noMessagesInChannel => 'لا توجد رسائل في هذه القناة';
+	@override String get tapToPlay => 'اضغط للاستماع';
+	@override String get authenticated => 'تم التحقق من الهوية';
+	@override String get attendance => 'الحضور';
+	@override String get attendanceSuccess => 'تم تسجيل الحضور بنجاح';
+	@override String get attendanceFailed => 'فشل في تسجيل الحضور';
+	@override String get locationRequired => 'مطلوب إذن الموقع لتسجيل الحضور';
+	@override String get fingerprint => 'بصمة الإصبع';
+	@override String get useFingerprint => 'استخدم بصمة الإصبع لتسجيل الحضور';
 }
 
 /// Flat map(s) containing all translations.
@@ -1004,6 +1046,27 @@ extension on Translations {
 			case 'safetyCheckDetails': return 'Safety Check Details';
 			case 'safetyCheckStore': return 'Safety Check Store';
 			case 'safetyCheckProjectDetails': return 'Safety Check Project Details';
+			case 'personalRequestTypes': return 'Personal Request Types';
+			case 'walkieTalkie': return 'Walkie Talkie';
+			case 'voiceMessage': return 'Voice Message';
+			case 'typeMessage': return 'Type a message...';
+			case 'recordVoiceMessage': return 'Record Voice Message';
+			case 'stopRecording': return 'Stop Recording';
+			case 'recording': return 'Recording...';
+			case 'holdToSpeak': return 'Hold to speak';
+			case 'speaking': return 'Speaking...';
+			case 'connected': return 'Connected';
+			case 'disconnected': return 'Disconnected';
+			case 'usersOnline': return 'users online';
+			case 'noMessagesInChannel': return 'No messages in this channel';
+			case 'tapToPlay': return 'Tap to play';
+			case 'authenticated': return 'Authenticated';
+			case 'attendance': return 'Attendance';
+			case 'attendanceSuccess': return 'Attendance recorded successfully';
+			case 'attendanceFailed': return 'Failed to record attendance';
+			case 'locationRequired': return 'Location permission required for attendance';
+			case 'fingerprint': return 'Fingerprint';
+			case 'useFingerprint': return 'Use fingerprint to record attendance';
 			default: return null;
 		}
 	}
@@ -1283,9 +1346,30 @@ extension on _StringsAr {
 			case 'makePersonalRequest': return 'تقديم طلب شخصي';
 			case 'myPersonalRequest': return 'طلباتي الشخصية';
 			case 'personalRequestDetails': return 'تفاصيل الطلب الشخصي';
-			case 'safetyCheckDetails': return 'تفاصيل التحقق من السلامة';
+			case 'safetyCheckDetails': return 'تفاصيل فحص السلامة';
 			case 'safetyCheckStore': return 'متجر فحص السلامة';
-			case 'safetyCheckProjectDetails': return 'تفاصيل مشروع التحقق من السلامة';
+			case 'safetyCheckProjectDetails': return 'تفاصيل مشروع فحص السلامة';
+			case 'personalRequestTypes': return 'أنواع الطلبات الشخصية';
+			case 'walkieTalkie': return 'جهاز اتصال لاسلكي';
+			case 'voiceMessage': return 'رسالة صوتية';
+			case 'typeMessage': return 'اكتب رسالة...';
+			case 'recordVoiceMessage': return 'تسجيل رسالة صوتية';
+			case 'stopRecording': return 'إيقاف التسجيل';
+			case 'recording': return 'جاري التسجيل...';
+			case 'holdToSpeak': return 'اضغط للحديث';
+			case 'speaking': return 'جاري الحديث...';
+			case 'connected': return 'متصل';
+			case 'disconnected': return 'غير متصل';
+			case 'usersOnline': return 'مستخدمين متصلين';
+			case 'noMessagesInChannel': return 'لا توجد رسائل في هذه القناة';
+			case 'tapToPlay': return 'اضغط للاستماع';
+			case 'authenticated': return 'تم التحقق من الهوية';
+			case 'attendance': return 'الحضور';
+			case 'attendanceSuccess': return 'تم تسجيل الحضور بنجاح';
+			case 'attendanceFailed': return 'فشل في تسجيل الحضور';
+			case 'locationRequired': return 'مطلوب إذن الموقع لتسجيل الحضور';
+			case 'fingerprint': return 'بصمة الإصبع';
+			case 'useFingerprint': return 'استخدم بصمة الإصبع لتسجيل الحضور';
 			default: return null;
 		}
 	}

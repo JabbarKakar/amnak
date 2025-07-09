@@ -52,7 +52,9 @@ class APIClient {
       headers.addAll({
         'Authorization': 'Bearer ${await box.read('token')}',
         'X-Auth-Type': '${user['type_account'] ?? ''}',
+
       });
+      debugPrint('===> X-Auth-Type: ${user['type_account'] ?? ''}');
     }
 
     debugPrint('===> headers: $headers');
