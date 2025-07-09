@@ -9,6 +9,7 @@ import 'package:amnak/features/auth/presentation/cubit.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../../export.dart';
+import '../../../../core/location_manager.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -214,12 +215,15 @@ class _SignUpPageState extends State<SignUpPage> {
                     10.h.heightBox,
                     RoundedCornerLoadingButton(
                       onPressed: () async {
+                        var myLocation = await getLocationPermission();
                         if (formKey.currentState!.validate()) {
                           FormData formData;
                           String? fileName = image?.path.split('/').last;
                           formData = FormData.fromMap({
-                            'latitude':  0.0,
-                            'longitude':  0.0,
+                            "longitude": myLocation?.longitude.toString(),
+                            "latitude": myLocation?.latitude.toString(),
+                            // 'latitude':  0.0,
+                            // 'longitude':  0.0,
                             'email': emailTextController.text,
                             'password': passTextController.text,
                             'password_confirmation': passTextController.text,

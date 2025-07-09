@@ -23,7 +23,7 @@ class UserUseCase {
   }
 
   Future<Either<Failure, ServerResponse>> deleteAccount() async {
-    return repository.update('person_delete_account', {}).then((value) => value
+    return repository.post('person_delete_account', {}).then((value) => value
         .map((r) => r == null ? ServerResponse() : ServerResponse.fromJson(r)));
   }
 

@@ -57,7 +57,7 @@ dependencies:
   flutter_secure_storage: ^9.1.1
   intl: ^0.19.0
   infinite_scroll_pagination: ^3.2.0
-  geolocator: ^13.0.2
+  geolocator: ^14.0.2
   url_launcher: ^6.3.1
   agora_rtc_engine: ^6.5.0
   permission_handler: ^11.3.1
